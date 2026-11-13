@@ -1,0 +1,282 @@
+Feature,Importance
+cat__Shipping Mode_Standard Class,0.40221313569507505
+cat__Shipping Mode_First Class,0.3001234261965527
+cat__Shipping Mode_Second Class,0.1350810894703358
+cat__Shipping Mode_Same Day,0.03129770125260731
+cat__Type_TRANSFER,0.019523496337271472
+num__Order Item Discount,0.008331236908768276
+num__Order Item Discount Rate,0.0060792895681029135
+cat__Type_DEBIT,0.006048318822763015
+num__Order Item Product Price,0.004561624487667503
+cat__Type_PAYMENT,0.004185181412381251
+num__Order Item Quantity,0.0028172661296718684
+cat__Customer Segment_Consumer,0.002306965214955972
+cat__Customer Segment_Corporate,0.0020886213080049242
+cat__Type_CASH,0.0017257584362551026
+cat__Customer Segment_Home Office,0.0016460177031524335
+cat__Customer Country_EE. UU.,0.0012849672117917952
+cat__Customer State_PR,0.0012676035914392892
+cat__Customer Country_Puerto Rico,0.0011956933594225205
+cat__Customer State_CA,0.001162547787711842
+cat__Department Name_Fan Shop,0.0009872162424944876
+cat__Customer State_TX,0.0009762884190434932
+cat__Department Name_Apparel,0.0008993941341927674
+cat__Customer State_FL,0.0008732650456551096
+cat__Customer State_IL,0.0008390094494200377
+cat__Order Country_Cuba,0.000822630787948576
+cat__Customer State_NY,0.000807248524746587
+cat__Customer State_TN,0.0007848807550069467
+cat__Market_LATAM,0.0007763251330645356
+cat__Department Name_Golf,0.0007554447491353336
+cat__Category Name_Cleats,0.0007184718378879576
+cat__Order Region_South America,0.0007077962951651872
+cat__Customer State_CO,0.0006999082188306802
+cat__Category Name_Women's Apparel,0.0006782252694185697
+cat__Category Name_Indoor/Outdoor Games,0.0006667358209285038
+cat__Order Region_Central America,0.0006557624363887
+cat__Order Region_East of USA,0.0006253489899962803
+cat__Category Name_Men's Footwear,0.0006222387401280974
+cat__Order Region_Western Europe,0.0006197810936587819
+cat__Market_Europe,0.0006173299107846405
+cat__Market_USCA,0.0006119960299689202
+cat__Category Name_Fishing,0.0006096296461324386
+cat__Customer State_NJ,0.0006087509046692012
+cat__Order Region_West of USA,0.000605992348474512
+cat__Category Name_Water Sports,0.0005930358533779352
+cat__Order Country_Estados Unidos,0.0005915985382540224
+cat__Department Name_Footwear,0.0005902616110477352
+cat__Order Region_Caribbean,0.0005834447514016467
+cat__Customer State_AZ,0.0005800638687350287
+cat__Order Country_PanamÃ¡,0.0005708934132913821
+cat__Order Country_Italia,0.0005699314051709093
+cat__Order Region_Oceania,0.000565157245748802
+cat__Market_Pacific Asia,0.0005649088227547491
+cat__Category Name_Camping & Hiking,0.0005487333295560567
+cat__Customer State_PA,0.000541901668783544
+cat__Customer State_GA,0.0005376603401515363
+cat__Order Region_Northern Europe,0.0005357382747177927
+cat__Order Country_Francia,0.0005308626222687864
+cat__Customer State_MD,0.0005277676461495802
+cat__Order Country_Brasil,0.0005261578278921396
+cat__Order Country_Alemania,0.0005224802034018214
+cat__Order Country_Australia,0.0005219246086581509
+cat__Category Name_Shop By Sport,0.0005187271133663785
+cat__Order Country_MÃ©xico,0.0005121538787677647
+cat__Order Region_Southeast Asia,0.0005050926676524551
+cat__Order Country_Irak,0.0004957847383666931
+cat__Department Name_Outdoors,0.0004897826443901114
+cat__Order Region_US Center,0.0004891631899906139
+cat__Order Region_Southern Europe,0.0004828166398524448
+cat__Customer State_MA,0.00047537892359071973
+cat__Order Country_El Salvador,0.0004751812190255276
+cat__Category Name_Cardio Equipment,0.0004612644375994195
+cat__Order Country_Suecia,0.0004587854891622384
+cat__Order Region_South Asia,0.00045758306392252256
+cat__Customer State_MI,0.0004531471230721861
+cat__Order Region_Eastern Asia,0.00045194393302823226
+cat__Order Country_Chile,0.0004432748143692063
+cat__Customer State_OH,0.0004410738980452619
+cat__Order Country_Nicaragua,0.0004341238375590686
+cat__Order Country_Reino Unido,0.00043340122639609624
+cat__Order Country_Colombia,0.00042248489965844555
+cat__Order Region_South of  USA,0.00042235751126671765
+cat__Order Region_West Africa,0.00042117237184424776
+cat__Order Region_West Asia,0.0004199989737147183
+cat__Order Country_China,0.0004196734354229879
+cat__Market_Africa,0.00041910238743515414
+cat__Order Country_RepÃºblica Dominicana,0.0004089901786508797
+cat__Order Country_India,0.0004023561781417125
+cat__Order Country_Marruecos,0.0004005676250716611
+cat__Customer State_VA,0.0003928922232934787
+cat__Customer State_MO,0.00039090261831703087
+cat__Customer State_HI,0.00038227641329726205
+cat__Order Country_Indonesia,0.0003802672131950237
+cat__Order Region_Eastern Europe,0.0003802267805835154
+cat__Order Country_Honduras,0.0003718844496360068
+cat__Customer State_OR,0.0003686388131616171
+cat__Order Country_Polonia,0.00036712939024581814
+cat__Customer State_NC,0.00036437988357695825
+cat__Order Country_Ucrania,0.0003614892450417971
+cat__Order Region_Canada,0.0003612925580285624
+cat__Customer State_NM,0.00035949953686573334
+cat__Order Country_BÃ©lgica,0.0003519285316560565
+cat__Order Region_Central Africa,0.00034978734228962574
+cat__Order Country_RepÃºblica DemocrÃ¡tica del Congo,0.000348370065821588
+cat__Order Region_North Africa,0.00034744844512003137
+cat__Order Country_Israel,0.00033703022361416206
+cat__Customer State_UT,0.0003309761194177771
+cat__Order Country_Venezuela,0.00032833546193011435
+cat__Order Country_Nueva Zelanda,0.0003211928428103991
+cat__Order Country_TurquÃ­a,0.00031378464482306176
+cat__Order Country_Nigeria,0.0003056108946028358
+cat__Order Country_Guatemala,0.00029766072346342284
+cat__Order Country_PerÃº,0.00029047759678933277
+cat__Order Country_Argentina,0.0002845285500728261
+cat__Category Name_Electronics,0.000283672280321984
+cat__Order Country_EspaÃ±a,0.0002833031458623276
+cat__Order Country_PaÃ­ses Bajos,0.0002831291457240479
+cat__Order Country_Canada,0.00027827704548730186
+cat__Customer State_LA,0.00027439653847513264
+cat__Order Country_Dinamarca,0.0002679835651887919
+cat__Customer State_CT,0.0002650219671491111
+cat__Customer State_KS,0.00025670632807365363
+cat__Order Country_Malasia,0.00025648751193531837
+cat__Order Region_East Africa,0.0002564042283726901
+cat__Department Name_Fitness,0.0002558777111015486
+cat__Customer State_AR,0.0002537300657492777
+cat__Order Country_Filipinas,0.0002535696851784791
+cat__Customer State_MN,0.0002518159332495046
+cat__Order Country_Egipto,0.00024921107441170775
+cat__Order Country_Irlanda,0.0002477053005151355
+cat__Order Country_Portugal,0.000247608571036579
+cat__Customer State_WA,0.00023690895969259078
+cat__Order Region_Central Asia,0.00023220542646668424
+cat__Customer State_SC,0.00022832763103716492
+cat__Customer State_NV,0.00022544831269790544
+cat__Order Country_CamerÃºn,0.00021971307469673625
+cat__Order Country_Ecuador,0.0002194929232089883
+cat__Order Region_Southern Africa,0.00021725614747028512
+cat__Order Country_Rusia,0.00021439240568870208
+cat__Order Country_Angola,0.00021027569474041464
+cat__Order Country_Austria,0.00020733494179203695
+cat__Order Country_SudAfrica,0.00020409880285602076
+cat__Order Country_Rumania,0.0002018209896401659
+cat__Order Country_Mozambique,0.00019988607050170978
+cat__Order Country_Estonia,0.0001984157605881228
+cat__Customer State_WI,0.00019190923856285326
+cat__Order Country_JapÃ³n,0.00018846629789297345
+cat__Category Name_Accessories,0.00018347021020936693
+cat__Customer State_DC,0.00018197209942327262
+cat__Order Country_Togo,0.00018038345257181962
+cat__Order Country_IrÃ¡n,0.00017462273240592392
+cat__Order Country_Myanmar (Birmania),0.00017050348428320462
+cat__Customer State_KY,0.00016675014432967957
+cat__Category Name_Golf Balls,0.00016508770242669937
+cat__Order Country_BangladÃ©s,0.00016429302646888392
+cat__Order Country_Croacia,0.00016339721385369405
+cat__Order Country_Vietnam,0.00016074445973128556
+cat__Order Country_Noruega,0.00015877908395557367
+cat__Customer State_RI,0.00015605077564368524
+cat__Order Country_Zambia,0.0001543177928129982
+cat__Department Name_Discs Shop,0.00015255801303543814
+cat__Order Country_Arabia SaudÃ­,0.00014565213944868076
+cat__Order Country_Kenia,0.000142711147536484
+cat__Order Country_Bolivia,0.0001423614200486426
+cat__Order Country_HungrÃ­a,0.0001409822949444369
+cat__Order Country_Costa de Marfil,0.0001402040347194574
+cat__Order Country_Corea del Sur,0.00013895367307541892
+cat__Category Name_Golf Gloves,0.00013804118787607127
+cat__Order Country_Somalia,0.00013160117289007315
+cat__Category Name_Girls' Apparel,0.00012943145968964242
+cat__Order Country_HaitÃ­,0.00012801769625943462
+cat__Order Country_Tailandia,0.00012615737110492826
+cat__Order Country_KazajistÃ¡n,0.00012512190511642868
+cat__Order Country_Georgia,0.0001248939343960082
+cat__Customer State_OK,0.000124538423296353
+cat__Order Country_Senegal,0.00012186183886527822
+cat__Order Country_Finlandia,0.00011918127449173972
+cat__Category Name_Trade-In,0.00011841413534090527
+cat__Order Country_Zimbabue,0.00011699940739379068
+cat__Department Name_Technology,0.00011661016457023198
+cat__Order Country_infrequent_sklearn,0.00011606794766837456
+cat__Customer State_IN,0.00011549475402417531
+cat__Order Country_Lituania,0.00011508828774684327
+cat__Order Country_Suiza,0.00011309050205876365
+cat__Order Country_Bielorrusia,0.00011272886819148932
+cat__Customer State_MT,0.00010824209121757523
+cat__Customer State_WV,0.00010570240073519742
+cat__Order Country_Martinica,0.00010502056877636508
+cat__Order Country_RepÃºblica Checa,0.00010428826861187856
+cat__Order Country_Jordania,0.00010231212611430944
+cat__Customer State_ND,0.00010146462193952105
+cat__Order Country_AfganistÃ¡n,0.00010027668660292247
+cat__Category Name_Cameras,9.787173867883262e-05
+cat__Order Country_PakistÃ¡n,9.759777451783968e-05
+cat__Customer State_ID,9.550377815461577e-05
+cat__Category Name_Video Games,9.474657093246015e-05
+cat__Order Country_Argelia,9.415997404404345e-05
+cat__Order Country_Ghana,9.281199740496351e-05
+cat__Customer State_DE,9.035016856436936e-05
+cat__Order Country_Yemen,8.885835369896233e-05
+cat__Order Country_TÃºnez,8.74430504695636e-05
+cat__Order Country_Tanzania,8.73040670268458e-05
+cat__Category Name_Books,8.279541982893341e-05
+cat__Order Country_Paraguay,8.160449706588784e-05
+cat__Department Name_Book Shop,7.995297865698437e-05
+cat__Order Country_Moldavia,7.912400057327031e-05
+cat__Category Name_Hockey,7.843170342783864e-05
+cat__Order Country_AzerbaiyÃ¡n,7.678268254012224e-05
+cat__Category Name_Kids' Golf Clubs,7.620701465329259e-05
+cat__Category Name_Children's Clothing,7.61407297690656e-05
+cat__Order Country_BenÃ­n,7.612257005874258e-05
+cat__Order Country_Hong Kong,7.117835604106856e-05
+cat__Order Country_Yibuti,7.090583478821163e-05
+cat__Category Name_Pet Supplies,6.922188641869408e-05
+cat__Order Country_SudÃ¡n,6.890358276563255e-05
+cat__Category Name_Sporting Goods,6.886219111339246e-05
+cat__Order Country_Singapur,6.885725929057783e-05
+cat__Category Name_DVDs,6.866917251404986e-05
+cat__Category Name_Baseball & Softball,6.789162751335855e-05
+cat__Order Country_TurkmenistÃ¡n,6.694157539615803e-05
+cat__Category Name_Health and Beauty,6.684104574739795e-05
+cat__Category Name_Computers,6.650363664702377e-05
+cat__Order Country_Trinidad y Tobago,6.514367414683486e-05
+cat__Category Name_Women's Clothing,6.507612306804589e-05
+cat__Category Name_Toys,6.128881393553057e-05
+cat__Order Country_GabÃ³n,6.103345779815068e-05
+cat__Category Name_Golf Shoes,6.088691523594448e-05
+cat__Order Country_UzbekistÃ¡n,6.085816988595307e-05
+cat__Category Name_Boxing & MMA,5.914830763558273e-05
+cat__Order Country_Madagascar,5.889746718338928e-05
+cat__Order Country_Jamaica,5.8878524995552214e-05
+cat__Order Country_KirguistÃ¡n,5.838539950620356e-05
+cat__Category Name_Lacrosse,5.77495877535404e-05
+cat__Order Country_Liberia,5.707831747006985e-05
+cat__Category Name_Hunting & Shooting,5.5103553105998554e-05
+cat__Category Name_Crafts,5.4649076524432656e-05
+cat__Department Name_Health and Beauty,5.4598463248963374e-05
+cat__Category Name_CDs,5.417164876987692e-05
+cat__Department Name_Pet Shop,5.310640878703954e-05
+cat__Order Country_Uruguay,5.3018034641644404e-05
+cat__Order Country_NÃ­ger,5.005953816998047e-05
+cat__Category Name_Consumer Electronics,4.9186879404740034e-05
+cat__Category Name_Music,4.765051034706409e-05
+cat__Category Name_Men's Golf Clubs,4.658633282576969e-05
+cat__Category Name_Tennis & Racquet,4.496238039879654e-05
+cat__Order Country_Barbados,4.462645668193109e-05
+cat__Order Country_Bulgaria,4.4585754525306866e-05
+cat__Category Name_Baby,4.449402684052773e-05
+cat__Order Country_Guinea-Bissau,4.354067547137432e-05
+cat__Category Name_Fitness Accessories,4.3238210059604234e-05
+cat__Order Country_Uganda,4.3044639079735505e-05
+cat__Order Country_Mongolia,4.0010314201160185e-05
+cat__Category Name_Golf Apparel,3.94373001667103e-05
+cat__Category Name_Soccer,3.875792592773511e-05
+cat__Order Country_TaiwÃ¡n,3.655741655036075e-05
+cat__Category Name_Garden,3.612615727040931e-05
+cat__Order Country_Albania,3.5536881505884244e-05
+cat__Order Country_Libia,3.315810083563881e-05
+cat__Order Country_Camboya,3.1712710007571105e-05
+cat__Order Country_Mali,3.137711935481409e-05
+cat__Order Country_Ruanda,3.134663099982942e-05
+cat__Order Country_Guadalupe,2.8801356771492026e-05
+cat__Order Country_Bosnia y Herzegovina,2.7678523855638137e-05
+cat__Order Country_Eslovaquia,2.5408268497194575e-05
+cat__Order Country_Emiratos Ãrabes Unidos,2.4223936581346934e-05
+cat__Order Country_Qatar,2.3649740849745053e-05
+cat__Order Country_PapÃºa Nueva Guinea,2.275563553846862e-05
+cat__Order Country_Guinea,1.9026712549340905e-05
+cat__Order Country_Nepal,1.7709416674265433e-05
+cat__Customer State_IA,1.6752493710771994e-05
+cat__Customer State_AL,1.607718413760977e-05
+cat__Category Name_Golf Bags & Carts,1.5533304146474982e-05
+cat__Category Name_Men's Clothing,1.4239824848944719e-05
+cat__Category Name_Strength Training,1.3195443533450903e-05
+cat__Category Name_Women's Golf Clubs,1.265447385653027e-05
+cat__Order Country_Costa Rica,1.1844317547538364e-05
+cat__Order Country_Grecia,1.177835853996601e-05
+cat__Order Country_Siria,1.0140654917190023e-05
+cat__Category Name_Basketball,7.950201842048805e-06
+cat__Order Country_Sierra Leona,5.00139327628997e-06
+cat__Category Name_As Seen on  TV!,1.1041689862526529e-06
+cat__Customer State_infrequent_sklearn,0.0
