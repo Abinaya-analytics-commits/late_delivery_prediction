@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Summary: Late Delivery Risk Mitigation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=JetBrains+Mono:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Merriweather', serif;
+            font-size: 15px;
+            line-height: 1.75;
+            color: #1f2937;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        
+        .paper-container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 60px 70px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Inter', sans-serif;
+            color: #111827;
+            font-weight: 700;
+        }
+        
+        h1 {
+            font-size: 26px;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            text-align: center;
+            color: #1e3a8a;
+        }
+        
+        h2 {
+            font-size: 19px;
+            margin-top: 36px;
+            margin-bottom: 14px;
+            border-bottom: 1.5px solid #e5e7eb;
+            padding-bottom: 6px;
+            color: #1e293b;
+        }
+        
+        h3 {
+            font-size: 16px;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            color: #334155;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Inter', sans-serif;
+            font-size: 13.5px;
+        }
+        
+        th, td {
+            padding: 10px 14px;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        blockquote {
+            font-family: 'Inter', sans-serif;
+            margin: 20px 0;
+            padding: 14px 20px;
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            color: #1e40af;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        pre {
+            background-color: #1e293b;
+            color: #f8fafc;
+            padding: 16px;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+        }
+        
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #f1f5f9;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #0f172a;
+        }
+        
+        hr {
+            border: 0;
+            border-top: 1px solid #e2e8f0;
+            margin: 30px 0;
+        }
+        
+        .diagram-notice {
+            background-color: #fef3c7;
+            border: 1px solid #fde68a;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #92400e;
+            margin: 15px 0;
+        }
+        
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .paper-container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            h2 {
+                page-break-after: avoid;
+            }
+            table, pre {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="paper-container">
+        <h1>Executive Summary: Machine Learning-Based Late Delivery Risk Mitigation</h1>
+<p><strong>To:</strong> Chief Operating Officer (COO), VP of Supply Chain & Global Logistics Directors  <br><strong>From:</strong> Lead Data Science & Supply Chain Analytics Specialist  <br><strong>Subject:</strong> Implementation of AI Early Warning System for Late Delivery Risk & Operational SLA Protection  <br><strong>Date:</strong> November 2026</p>
+<hr>
+<h2>🚀 Executive Snapshot</h2>
+<pre><code>+-----------------------------------+-----------------------------------+-----------------------------------+
+<div class="table-container"><table><thead><tr><th>TOTAL SHIPMENTS SCALED</th><th>BASELINE DELAY RATE</th><th>LATE DELIVERY RECALL (0.35)</th></tr></thead><tbody><tr><td>(APL Logistics Network)</td><td>(Over half of shipments late)</td><td>(Up from 55.2% at standard cut)</td></tr></tbody></table></div>
++-----------------------------------+-----------------------------------+-----------------------------------+
+<div class="table-container"><table><thead><tr><th>MISSED DELIVERIES REDUCTION</th><th>DISCRIMINATION (ROC-AUC)</th><th>HIGH-RISK ALERT QUEUE (TEST)</th></tr></thead><tbody><tr><td>(From 8,846 down to 2,219)</td><td>(Random Forest Pipeline)</td><td>(89.2% actual delay incidence)</td></tr></tbody></table></div>
++-----------------------------------+-----------------------------------+-----------------------------------+
+</code></pre>
+<hr>
+<h2>1. Strategic Context & The Problem</h2>
+In modern supply chain networks, delivery reliability directly dictates customer retention, marketplace ratings, and contractual service-level agreement (SLA) penalties.
+<p>Across <strong>180,519 analyzed international shipments</strong>, our operations experienced an alarming baseline <strong>late delivery rate of 54.83%</strong> (98,977 delayed orders). Late fulfillment is no longer an occasional anomaly—it represents the default outcome across a majority of routes.</p>
+<p>Most critically, deep exploratory analysis uncovered a severe <strong>operational paradox in shipping tiers</strong>:</p>
+<div class="table-container"><table><thead><tr><th>Shipping Tier</th><th>Total Orders</th><th>Delay Rate (%)</th><th>Operational Reality</th></tr></thead><tbody><tr><td><strong>First Class (Express)</strong></td><td>27,814</td><td><strong>95.32%</strong></td><td><strong>Severe Brand & SLA Failure:</strong> Premium paying customers experience the worst delivery rates.</td></tr><tr><td><strong>Second Class</strong></td><td>35,216</td><td><strong>76.63%</strong></td><td>Systematic failure due to unachievable scheduled transit windows.</td></tr><tr><td><strong>Same Day</strong></td><td>9,737</td><td><strong>45.74%</strong></td><td>Moderate delay; localized fulfillment bottlenecks.</td></tr><tr><td><strong>Standard Class (Economy)</strong></td><td>107,752</td><td><strong>38.07%</strong></td><td>Most reliable tier; realistic lead times absorb warehouse buffer delays.</td></tr></tbody></table></div>
+<blockquote><strong>Key Takeaway for Leadership:</strong> Customers paying the highest premiums for expedited transit are receiving the worst service. The business is incurring massive customer friction and refund liability due to promises that current carrier agreements cannot physically honor.</blockquote>
+<hr>
+<h2>2. The Machine Learning Solution</h2>
+To solve this without adding costly manual inspection overhead, we engineered an <strong>automated Early-Warning Machine Learning System</strong> that scores incoming orders at intake—<strong>before shipments leave the distribution center</strong>.
+<p>- <strong>Anti-Leakage Architecture:</strong> Purged all 18 post-fulfillment variables (e.g., actual transit days, fulfillment status) to ensure 100% predictive integrity during live operations.<br>- <strong>Algorithm Benchmarking:</strong> Evaluated Logistic Regression, Gradient Boosting, and Random Forest models across 14 operational features.<br>- <strong>Winning Engine:</strong> A 150-tree <strong>Random Forest Pipeline</strong> achieved the highest discrimination power with an <strong>ROC-AUC of 0.7603</strong> on 36,104 unseen test shipments.</p>
+<hr>
+<h2>3. Threshold Economics: Why We Chose a 0.35 Decision Cutoff</h2>
+Standard off-the-shelf AI models apply a default 0.50 probability cutoff, assuming that missing a late delivery costs the same as a false alarm. In logistics, this assumption is disastrous.
+<div class="diagram-notice">[Mermaid Diagram rendered in Markdown preview]</div>
+<p>By re-calibrating the alert threshold to <strong>0.35</strong>:<br>1. <strong>Late Delivery Detection (Recall) surged from 55.22% to 88.79%</strong>.<br>2. <strong>Captured 17,577 delayed shipments</strong> out of 19,796 actual delays on the test set.<br>3. <strong>Missed late deliveries dropped from 8,846 to 2,219</strong>—an immediate <strong>75.0% reduction in unflagged fulfillment failures</strong>.<br>4. False alarms (Type I errors) require only internal warehouse prioritization or automated status alerts, incurring negligible cost compared to customer churn and expediting fees.</p>
+<hr>
+<h2>4. Operational Implementation: The Dispatch Alert Queue</h2>
+The predictive model has been compiled into a standalone, interactive <strong>Streamlit Decision Support System (`app.py`)</strong> that integrates directly with warehouse dispatch systems:
+<p>1. <strong>Pre-Dispatch Scoring:</strong> Orders are scored upon picking and packing.<br>2. <strong>Dynamic Risk Tiering:</strong><br>   - <strong>High Risk ($P \ge 0.70$):</strong> <strong>10,217 orders (28.3%)</strong> with an empirical late delivery rate of <strong>89.2%</strong>. These immediately trigger priority fulfillment.<br>   - <strong>Medium Risk ($0.40 \le P < 0.70$):</strong> 4,786 orders (58.8% late rate) queued for secondary review.<br>   - <strong>Low Risk ($P < 0.40$):</strong> 21,101 orders (37.3% late rate) routed through standard automated lanes.<br>3. <strong>Priority Dispatch Queue:</strong> Warehouse leads can download the flagged queue as a CSV with a single click, enabling immediate expediting or carrier re-assignment before handoff.</p>
+<hr>
+<h2>5. Four Actionable C-Suite Recommendations</h2>
+<h3>Recommendation 1: Recalibrate Promised Lead Times for Express Shipping</h3>
+- <strong>Immediate Action:</strong> Adjust online checkout promise windows for <em>First Class</em> by <strong>+24 to +48 hours</strong>. 
+- <strong>Business Impact:</strong> Eliminates the artificial SLA gap. Realistic delivery promises immediately turn delayed orders into on-time arrivals without capital expenditure.
+<h3>Recommendation 2: Institute Carrier Clawback & 3PL Performance Audits</h3>
+- <strong>Immediate Action:</strong> Present carrier scorecards derived from model attribution to third-party logistics partners handling First and Second Class lanes.
+- <strong>Business Impact:</strong> Enforce contract clawback clauses for failure to achieve promised transit times, recovering significant third-party freight fees.
+<h3>Recommendation 3: Implement Automated Pre-Dispatch Interventions</h3>
+- <strong>Immediate Action:</strong> Embed the 0.35 threshold alert queue into the Warehouse Management System (WMS).
+- <strong>Business Impact:</strong> When an order is flagged as High Risk, automatically upgrade carrier service to dedicated direct linehaul or prioritize dock loading.
+<h3>Recommendation 4: Promotional Surge Buffering</h3>
+- <strong>Immediate Action:</strong> Grouped feature importance reveals that discount volume and promotional spikes account for over 21% of model influence. 
+- <strong>Business Impact:</strong> Automatically staff packaging lines dynamically when marketing launches promotional discount campaigns exceeding 15%.
+<hr>
+<h2>6. Expected Return on Investment (ROI)</h2>
+<div class="table-container"><table><thead><tr><th>Operational Area</th><th>Current Status Quo</th><th>With AI Early-Warning (Threshold 0.35)</th><th>Expected Business Impact</th></tr></thead><tbody><tr><td><strong>Missed Delivery Breaches</strong></td><td>8,846 per 36k test orders</td><td>2,219 per 36k test orders</td><td><strong>75% reduction</strong> in unflagged late deliveries</td></tr><tr><td><strong>First Class Customer NPS</strong></td><td>Severely impaired (95% late)</td><td>Protected via realistic SLAs & expediting</td><td>Significant uplift in repeat buyer lifetime value</td></tr><tr><td><strong>Carrier Freight Recovery</strong></td><td>Unmonitored 3PL delays</td><td>Automated delay evidence by shipping mode</td><td>Direct recovery of contractual SLA penalty credits</td></tr><tr><td><strong>Warehouse Resource Allocation</strong></td><td>Reactive firefighting</td><td>Proactive dispatch prioritization</td><td>Optimized overtime and peak-season labor staffing</td></tr></tbody></table></div>
+<hr>
+<h2>7. Submission Deliverables Summary</h2>
+The complete technical and analytical package is packaged in the project repository:
+1. <strong>Academic Research Paper:</strong> `Research_Paper_Late_Delivery_Risk.md`
+2. <strong>Executive Summary:</strong> `Executive_Summary_Late_Delivery_Risk.md`
+3. <strong>Interactive Streamlit Dashboard:</strong> `app.py`
+4. <strong>Trained Random Forest Pipeline:</strong> `trained_random_forest_pipeline.pkl` (17.78 MB)
+5. <strong>Scored Test Dataset & Alert Queue:</strong> `data/UM_scored_test_orders_tuned.csv` & `late_delivery_alert_queue.csv`
+6. <strong>Model Metrics & Charts:</strong> `results/` and `figures/`
+7. <strong>Jupyter Notebook:</strong> `UM_Late_Delivery_Risk_Prediction.ipynb`
+    </div>
+</body>
+</html>

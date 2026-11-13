@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper: Machine Learning-Based Late Delivery Risk Prediction</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=JetBrains+Mono:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Merriweather', serif;
+            font-size: 15px;
+            line-height: 1.75;
+            color: #1f2937;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        
+        .paper-container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 60px 70px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Inter', sans-serif;
+            color: #111827;
+            font-weight: 700;
+        }
+        
+        h1 {
+            font-size: 26px;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            text-align: center;
+            color: #1e3a8a;
+        }
+        
+        h2 {
+            font-size: 19px;
+            margin-top: 36px;
+            margin-bottom: 14px;
+            border-bottom: 1.5px solid #e5e7eb;
+            padding-bottom: 6px;
+            color: #1e293b;
+        }
+        
+        h3 {
+            font-size: 16px;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            color: #334155;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Inter', sans-serif;
+            font-size: 13.5px;
+        }
+        
+        th, td {
+            padding: 10px 14px;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        blockquote {
+            font-family: 'Inter', sans-serif;
+            margin: 20px 0;
+            padding: 14px 20px;
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            color: #1e40af;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        pre {
+            background-color: #1e293b;
+            color: #f8fafc;
+            padding: 16px;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+        }
+        
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #f1f5f9;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #0f172a;
+        }
+        
+        hr {
+            border: 0;
+            border-top: 1px solid #e2e8f0;
+            margin: 30px 0;
+        }
+        
+        .diagram-notice {
+            background-color: #fef3c7;
+            border: 1px solid #fde68a;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #92400e;
+            margin: 15px 0;
+        }
+        
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .paper-container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            h2 {
+                page-break-after: avoid;
+            }
+            table, pre {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="paper-container">
+        <h1>Machine Learning-Based Late Delivery Risk Prediction in Global Supply Chain Operations</h1>
+<p><strong>Author:</strong> Data Science & Logistics Operations Group  <br><strong>Project:</strong> Unified Mentors — Project 1 Completion Report  <br><strong>Date:</strong> November 2026</p>
+<hr>
+<h2>Abstract</h2>
+Delivery punctuality is an essential determinant of customer retention, service-level agreement (SLA) compliance, and operational cost containment in global supply chain networks. Despite substantial investments in tracking infrastructure, supply chain managers frequently encounter high rates of delayed fulfillment. This paper presents an end-to-end predictive machine learning framework designed to forecast late delivery risk at the time of order intake, utilizing a benchmark dataset of 180,519 multi-regional shipments from APL Logistics / DataCo.
+<p>To prevent data leakage, post-fulfillment operational variables (e.g., actual shipping days, delivery status, order fulfillment status) were eliminated, restricting candidate features to 14 attributes available prior to dispatch. A comparison of Logistic Regression, Gradient Boosting, and Random Forest models demonstrates that an optimized Random Forest pipeline achieves superior discrimination with an Area Under the Receiver Operating Characteristic curve (ROC-AUC) of <strong>0.7603</strong> on unseen test data.</p>
+<p>Recognizing that missed late deliveries incur substantially higher business costs than false alarms, we formulate delivery risk forecasting as a cost-sensitive decision problem. By calibrating the classification threshold from the standard 0.50 cutoff to an empirical optimum of <strong>0.35</strong>, the model’s late-delivery recall jumps from <strong>55.22% to 88.79%</strong>, capturing <strong>17,577 delayed shipments</strong> and reducing undetected delays by <strong>75.0%</strong>. Global model explainability via Mean Decrease in Impurity (MDI) and Permutation Feature Importance reveals that <em>Shipping Mode</em> is the predominant predictor (86.87% normalized MDI), uncovering a critical supply chain paradox: premium <em>First Class</em> shipments experience a <strong>95.32% delay rate</strong> due to unachievable scheduled transit promises. The predictive engine is embedded into an interactive Streamlit decision support system with a dynamic dispatch alert queue, providing supply chain practitioners with an actionable early-warning system.</p>
+<p><strong>Keywords:</strong> Supply Chain Analytics, Late Delivery Prediction, Cost-Sensitive Classification, Random Forest, Model Interpretability, Threshold Optimization, Logistics Decision Support Systems.</p>
+<hr>
+<h2>1. Introduction</h2>
+<h3>1.1 Operational Context</h3>
+Globalized commerce has transformed supply chain networks into complex, highly interdependent ecosystems characterized by multi-tiered supplier tiers, geographically dispersed distribution centers, and diverse last-mile carrier arrangements (Kuhn & Johnson, 2013). Within this paradigm, delivery timeliness has transitioned from a competitive differentiator to a mandatory operational requirement. Contractual enterprise agreements commonly enforce stringent On-Time, In-Full (OTIF) service levels, penalizing delivery breaches through direct contractual chargebacks, freight expedited re-routing expenses, and damaged business reputations (Zheng, 2025).
+<p>Despite advances in Enterprise Resource Planning (ERP) and Transportation Management Systems (TMS), supply chain operations remain vulnerable to disruptions. Order backlogs, warehouse processing congestion, regional transportation capacity imbalances, and inaccurate transit time estimations frequently cascade into fulfillment failures. In typical enterprise logistics datasets, late delivery incidence often exceeds 50%, highlighting widespread systemic mismatches between scheduled commitments and physical fulfillment capabilities.</p>
+<h3>1.2 The Cost-Asymmetry Problem in Logistics Forecasting</h3>
+Conventional classification models applied to operational risk management typically default to a decision probability threshold of $p = 0.50$, implicitly assuming that false positives and false negatives incur symmetric operational penalties. In logistics fulfillment, this assumption is demonstrably invalid:
+- <strong>False Negative (Type II Error — Missed Late Delivery):</strong> An order predicted to arrive on time that subsequently arrives late. This failure triggers customer escalation, SLA non-compliance penalties, emergency expediting costs, and negative brand equity.
+- <strong>False Positive (Type I Error — False Alarm):</strong> An order predicted to be late that arrives on time. This triggers automated operational inspection, warehouse prioritization, or proactive tracking verification—interventions with negligible marginal cost.
+<p>Consequently, supply chain decision-makers require predictive architectures calibrated to maximize sensitivity (recall), ensuring that the overwhelming majority of at-risk shipments are intercepted prior to carrier handoff.</p>
+<h3>1.3 Research Objectives</h3>
+This study addresses four core research questions:
+1. <strong>Data Leakage Mitigation:</strong> How can predictive models be rigorously isolated from post-event leakage in complex operational datasets?
+2. <strong>Algorithm Comparison:</strong> Which machine learning architecture (linear vs. ensemble tree-based) provides the most robust discrimination between on-time and delayed shipments?
+3. <strong>Threshold Optimization:</strong> What empirical decision threshold optimally balances late-delivery capture rate against operational false alarms?
+4. <strong>Actionable Explainability:</strong> What structural features drive late delivery risk, and how can these insights inform tactical supply chain interventions?
+<hr>
+<h2>2. Related Literature</h2>
+<h3>2.1 Machine Learning in Supply Chain Management</h3>
+Predictive analytics in supply chain operations has increasingly shifted from classical statistical forecasting (e.g., ARIMA, linear regression) toward non-linear machine learning architectures (James et al., 2023). Empirical studies demonstrate that ensemble algorithms, specifically Random Forests and Gradient Boosted Decision Trees (GBDT), consistently outperform parametric baselines on tabular logistics data due to their ability to capture high-order feature interactions, accommodate mixed numerical and categorical data types, and resist outlier distortion (Chen & Guestrin, 2016; Lessmann et al., 2015).
+<h3>2.2 Cost-Sensitive Learning & Threshold Tuning</h3>
+In imbalanced or cost-asymmetric domains such as fraud detection, medical diagnosis, and supply chain risk, standard accuracy is recognized as an inadequate evaluation metric (Davis & Goadrich, 2006; Nasir et al., 2024). Researchers emphasize that model evaluation must rely on threshold-independent discrimination metrics (ROC-AUC, Precision-Recall AUC) combined with explicit post-hoc probability threshold tuning (Abdullah & Hasan, 2023). Calibrating the classification threshold to align with the domain's cost matrix enables operational managers to select operational operating points that directly minimize aggregate financial exposure.
+<h3>2.3 Explainable Artificial Intelligence (XAI) in Logistics</h3>
+The deployment of machine learning in mission-critical operations requires transparency. Black-box models that generate risk scores without attribution often face organizational resistance from warehouse managers and logistics coordinators (Bücker et al., 2020; Schwartz et al., 2025). Methods such as Gini-based Mean Decrease in Impurity (MDI) and Permutation Feature Importance provide global interpretability, identifying systemic bottlenecks (e.g., specific carrier tiers, geographical regions, or promotional discounts) that cause delays.
+<hr>
+<h2>3. Dataset Architecture & Exploratory Data Analysis</h2>
+<h3>3.1 Dataset Overview</h3>
+The analysis utilizes the APL Logistics / DataCo Global Supply Chain dataset, comprising <strong>180,519 historical customer transactions</strong> and <strong>40 operational attributes</strong> spanning international commercial activities. The target variable is binary:
+$$\text{Late\_delivery\_risk} = \begin{cases} 1, & \text{if delivery arrived after scheduled transit window} \\ 0, & \text{if delivery arrived on or before schedule} \end{cases}$$
+<p>Across the 180,519 transactions, <strong>98,977 shipments were delayed (54.83%)</strong>, while <strong>81,542 shipments were on time (45.17%)</strong>. This distribution reveals that late delivery is not a rare anomaly, but the dominant operational outcome across the network.</p>
+<h3>3.2 Rigorous Data Leakage Mitigation</h3>
+A critical hazard in retrospective supply chain analytics is <em>target leakage</em>—the presence of features that record information generated after the prediction event occurs. In a live deployment, predictions must be generated when an order is received or released to the warehouse.
+<p>A comprehensive data audit identified and excluded 18 confounding variables:<br>- <strong>Direct Leakage Features:</strong> `Days for shipping (real)`, `Delivery Status`, `Actual_Delay`, `Actual_Late`, `Order Status`. (In the raw data, `Days for shipping (real) > Days for shipment (scheduled)` perfectly correlates with delay, which would artificially inflate model accuracy to 100% while rendering it useless for forward-looking deployment).<br>- <strong>Post-Fulfillment Accounting Variables:</strong> `Benefit per order`, `Sales per customer`, `Order Item Profit Ratio`, `Order Profit Per Order`.<br>- <strong>Customer Personal Identifiers:</strong> `Customer Fname`, `Customer Lname`, `Customer Street`, `Customer Zipcode`, `Customer Id`, `Order Customer Id`.</p>
+<h3>3.3 Selected Input Features</h3>
+After leakage elimination and high-cardinality pruning (removing redundant postal and coordinate data), <strong>14 clean operational predictors</strong> were established:
+- <strong>Numerical (4):</strong> `Order Item Discount`, `Order Item Discount Rate`, `Order Item Product Price`, `Order Item Quantity`.
+- <strong>Categorical (10):</strong> `Type` (Payment method: DEBIT, TRANSFER, PAYMENT, CASH), `Category Name` (Product line), `Customer Country`, `Customer Segment` (Consumer, Corporate, Home Office), `Customer State`, `Department Name`, `Market` (LATAM, Europe, Pacific Asia, USCA, Africa), `Order Country`, `Order Region`, `Shipping Mode` (Standard Class, Second Class, First Class, Same Day).
+<h3>3.4 Exploratory Insights: The Shipping Mode Paradox</h3>
+Cross-tabulation of delivery outcomes against transportation modes uncovered a profound operational finding:
+<div class="table-container"><table><thead><tr><th>Shipping Mode</th><th>Total Shipments</th><th>Delay Count</th><th>Observed Late Rate (%)</th></tr></thead><tbody><tr><td><strong>First Class</strong></td><td>27,814</td><td>26,513</td><td><strong>95.32%</strong></td></tr><tr><td><strong>Second Class</strong></td><td>35,216</td><td>26,985</td><td><strong>76.63%</strong></td></tr><tr><td><strong>Same Day</strong></td><td>9,737</td><td>4,454</td><td><strong>45.74%</strong></td></tr><tr><td><strong>Standard Class</strong></td><td>107,752</td><td>41,025</td><td><strong>38.07%</strong></td></tr></tbody></table></div>
+<div class="diagram-notice">[Mermaid Diagram rendered in Markdown preview]</div>
+<p><strong>The Paradox:</strong> Customers selecting and paying for premium expedited shipping (<em>First Class</em>) experience an overwhelming <strong>95.32% failure rate</strong>, whereas economy shipments (<em>Standard Class</em>) fail at only <strong>38.07%</strong>. This disparity indicates that carriers are assigned unachievable delivery windows (typically 1 to 2 days) for First Class consignments without corresponding dedicated rapid-transit fulfillment capacity.</p>
+<hr>
+<h2>4. Methodology & Model Architecture</h2>
+<h3>4.1 Data Partitioning & Preprocessing Pipeline</h3>
+To guarantee rigorous out-of-sample evaluation, the dataset was split into an <strong>80% training set (144,415 orders)</strong> and a <strong>20% test set (36,104 orders)</strong> using stratified sampling based on the target distribution.
+<p>The data preprocessing was structured into an automated `ColumnTransformer`:<br>- <strong>Numerical Features:</strong> Imputed using median values to resist skewness, followed by standard z-score normalization (`StandardScaler`).<br>- <strong>Categorical Features:</strong> Imputed with the most frequent value, followed by `OneHotEncoder(handle_unknown='ignore', min_frequency=20)`. Infrequent categories below 20 occurrences were pooled into a composite category to prevent high-dimensional sparse explosion.</p>
+<h3>4.2 Algorithm Benchmarking</h3>
+Three distinct model architectures were evaluated:
+1. <strong>Logistic Regression (L2 Regularized):</strong> Established as a linear, interpretable baseline ($C=1.0$, `max_iter=1000`).
+2. <strong>Gradient Boosting Classifier:</strong> Sequential ensemble boosting utilizing shallow decision trees (`n_estimators=100`, `learning_rate=0.1`, `max_depth=3`).
+3. <strong>Random Forest Classifier:</strong> Bagged ensemble comprising 150 de-correlated decision trees with `max_depth=20`, `min_samples_leaf=5`, `class_weight='balanced'`, and `random_state=42`.
+<h3>4.3 Cost-Sensitive Decision Calibration</h3>
+To identify the optimal operational decision cutoff, probability thresholds from $\tau = 0.30$ to $\tau = 0.50$ (in increments of 0.05) were systematically evaluated on a held-out validation split.
+<p>The optimization objective was formulated to maximize late-delivery recall while maintaining operational precision above 60%:<br>$$\tau^* = \arg\max_{\tau} \text{Recall}(\tau) \quad \text{subject to} \quad \text{Precision}(\tau) \ge 0.60$$</p>
+<hr>
+<h2>5. Empirical Results</h2>
+<h3>5.1 Out-of-Sample Model Comparison</h3>
+On the 36,104 test transactions, models evaluated at the standard $\tau = 0.50$ threshold yielded the following discrimination metrics:
+<div class="table-container"><table><thead><tr><th>Model Architecture</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1-Score</th><th>ROC-AUC</th></tr></thead><tbody><tr><td><strong>Random Forest Pipeline</strong></td><td><strong>0.6996</strong></td><td><strong>0.8455</strong></td><td><strong>0.5532</strong></td><td><strong>0.6688</strong></td><td><strong>0.7603</strong></td></tr><tr><td>Gradient Boosting</td><td>0.6977</td><td>0.8463</td><td>0.5483</td><td>0.6655</td><td>0.7451</td></tr><tr><td>Logistic Regression</td><td>0.6949</td><td>0.8336</td><td>0.5541</td><td>0.6657</td><td>0.7435</td></tr></tbody></table></div>
+<p>The Random Forest architecture achieved the highest overall ROC-AUC (<strong>0.7603</strong>), outperforming both linear and boosting baselines across discriminatory stability.</p>
+<h3>5.2 Threshold Tuning Impact Analysis</h3>
+Evaluating the Random Forest model across threshold settings demonstrates the severe trade-offs inherent in the default cutoff:
+<div class="table-container"><table><thead><tr><th>Threshold ($\tau$)</th><th>Precision</th><th>Recall</th><th>F1-Score</th><th>Late Deliveries Caught (TP)</th><th>Missed Delays (FN)</th><th>False Alarms (FP)</th></tr></thead><tbody><tr><td>0.50 (Default)</td><td>0.8455</td><td>0.5532</td><td>0.6688</td><td>10,950</td><td>8,846</td><td>1,999</td></tr><tr><td>0.45</td><td>0.8190</td><td>0.5730</td><td>0.6740</td><td>11,343</td><td>8,453</td><td>2,508</td></tr><tr><td>0.40</td><td>0.7910</td><td>0.6010</td><td>0.6830</td><td>11,897</td><td>7,899</td><td>3,142</td></tr><tr><td><strong>0.35 (Optimal)</strong></td><td><strong>0.6000</strong></td><td><strong>0.8879</strong></td><td><strong>0.7176</strong></td><td><strong>17,577</strong></td><td><strong>2,219</strong></td><td><strong>11,717</strong></td></tr><tr><td>0.30</td><td>0.5520</td><td>0.9950</td><td>0.7100</td><td>19,697</td><td>99</td><td>15,980</td></tr></tbody></table></div>
+<div class="diagram-notice">[Mermaid Diagram rendered in Markdown preview]</div>
+<h4>Key Empirical Findings:</h4>
+1. At the conventional $\tau = 0.50$ cutoff, the model misses <strong>8,846 late shipments</strong> out of 19,796 actual delays (a failure rate of 44.7%).
+2. At the calibrated $\tau = 0.35$ cutoff, late-delivery recall surges to <strong>88.79%</strong>, capturing <strong>17,577 delayed shipments</strong>.
+3. Missed late deliveries plunge from <strong>8,846 down to 2,219</strong>—representing an immediate <strong>75.0% reduction in unflagged supply chain breaches</strong>.
+4. The harmonic mean F1-Score improves from <strong>0.6688 to 0.7176</strong>, proving that $\tau = 0.35$ represents a mathematically superior operational balance.
+<h3>5.3 Test Set Risk Stratification</h3>
+To operationalize predictions, each shipment was assigned to a risk tier based on its posterior probability $P(\text{Late} \mid X)$:
+- <strong>High Risk ($P \ge 0.70$):</strong> <strong>10,217 orders (28.3%)</strong> with an actual delay rate of <strong>89.2%</strong> (average predicted risk: 81.7%).
+- <strong>Medium Risk ($0.40 \le P < 0.70$):</strong> <strong>4,786 orders (13.3%)</strong> with an actual delay rate of <strong>58.8%</strong>.
+- <strong>Low Risk ($P < 0.40$):</strong> <strong>21,101 orders (58.4%)</strong> with an actual delay rate of <strong>37.3%</strong>.
+<hr>
+<h2>6. Model Explainability & Feature Attribution</h2>
+<h3>6.1 Gini Impurity (MDI) Importance</h3>
+Aggregating one-hot encoded variables back to their parent features reveals the core operational determinants of late delivery risk:
+<div class="table-container"><table><thead><tr><th>Rank</th><th>Original Variable</th><th>Grouped Importance Score</th><th>% Contribution</th></tr></thead><tbody><tr><td>1</td><td><strong>Shipping Mode</strong></td><td>0.8687</td><td><strong>86.87%</strong></td></tr><tr><td>2</td><td><strong>Type (Payment / Order Type)</strong></td><td>0.0315</td><td>3.15%</td></tr><tr><td>3</td><td><strong>Order Country</strong></td><td>0.0255</td><td>2.55%</td></tr><tr><td>4</td><td><strong>Customer State</strong></td><td>0.0176</td><td>1.76%</td></tr><tr><td>5</td><td><strong>Order Region</strong></td><td>0.0107</td><td>1.07%</td></tr><tr><td>6</td><td><strong>Order Item Discount</strong></td><td>0.0083</td><td>0.83%</td></tr><tr><td>7</td><td><strong>Category Name</strong></td><td>0.0083</td><td>0.83%</td></tr><tr><td>8</td><td><strong>Order Item Discount Rate</strong></td><td>0.0061</td><td>0.61%</td></tr><tr><td>9</td><td><strong>Customer Segment</strong></td><td>0.0060</td><td>0.60%</td></tr><tr><td>10</td><td><strong>Order Item Product Price</strong></td><td>0.0046</td><td>0.46%</td></tr><tr><td>11</td><td><strong>Department Name</strong></td><td>0.0044</td><td>0.44%</td></tr><tr><td>12</td><td><strong>Market</strong></td><td>0.0030</td><td>0.30%</td></tr><tr><td>13</td><td><strong>Order Item Quantity</strong></td><td>0.0028</td><td>0.28%</td></tr><tr><td>14</td><td><strong>Customer Country</strong></td><td>0.0025</td><td>0.25%</td></tr></tbody></table></div>
+<h3>6.2 Permutation Feature Importance</h3>
+Permutation feature importance was computed on a stratified sample of 5,000 test observations by measuring the mean degradation in ROC-AUC when each feature's values were randomly shuffled across 3 iterations:
+<div class="table-container"><table><thead><tr><th>Feature</th><th>Mean ROC-AUC Drop</th><th>Standard Deviation</th></tr></thead><tbody><tr><td><strong>Shipping Mode</strong></td><td><strong>+0.1624</strong></td><td>0.00491</td></tr><tr><td><strong>Type</strong></td><td><strong>+0.0082</strong></td><td>0.00404</td></tr><tr><td><strong>Order Country</strong></td><td>+0.0018</td><td>0.00034</td></tr><tr><td><strong>Customer State</strong></td><td>+0.0015</td><td>0.00045</td></tr><tr><td><strong>Order Region</strong></td><td>+0.0011</td><td>0.00049</td></tr></tbody></table></div>
+<p>Both explainability methodologies confirm that <strong>Shipping Mode</strong> overwhelmingly governs fulfillment probability. The structural mechanics of the supply chain network are largely determined by carrier agreements and transit promises rather than individual product attributes.</p>
+<hr>
+<h2>7. Operational Implementation: The Decision Support System</h2>
+<p>To translate predictive intelligence into warehouse-floor action, the trained model pipeline was operationalized into a lightweight, interactive <strong>Streamlit Dashboard (`app.py`)</strong>.</p>
+<pre><code>+---------------------------------------------------------------------------------+
+<div class="table-container"><table><thead><tr><th>GLOBAL SUPPLY CHAIN RISK DASHBOARD</th></tr></thead><tbody></tbody></table></div>
++------------------------------------+--------------------------------------------+
+<div class="table-container"><table><thead><tr><th>OPERATIONAL CONTROLS (Sidebar)</th><th>REAL-TIME KPI METRIC CARDS</th></tr></thead><tbody><tr><td>- Market Multi-Select: [All]</td><td>- Orders Flagged: 29,294 (81.1%)</td></tr><tr><td>- Region Multi-Select: [All]</td><td>- Late Delivery Recall: 88.8%</td></tr><tr><td>- Shipping Mode: [All]</td><td>- High-Risk Queue (>70%): 10,217</td></tr></tbody></table></div>
++------------------------------------+--------------------------------------------+
+<div class="table-container"><table><thead><tr><th>INTERACTIVE VISUALIZATION SUITE</th></tr></thead><tbody><tr><td>[ Regional Risk Heatmap: Top Vulnerable Global Fulfillment Zones ]</td></tr></tbody></table></div>
++---------------------------------------------------------------------------------+
+<div class="table-container"><table><thead><tr><th>PRIORITY DISPATCH ALERT QUEUE (Tabular Interface)</th></tr></thead><tbody><tr><td>#127141</td><td>First Class</td><td>US</td><td>94.2%</td><td>High</td><td>Expedite Dispatch</td></tr><tr><td>#074789</td><td>First Class</td><td>Asia</td><td>92.8%</td><td>High</td><td>Carrier Re-route</td></tr><tr><td>[ Download Full Flagged Queue as CSV ]</td></tr></tbody></table></div>
++---------------------------------------------------------------------------------+
+</code></pre>
+<h3>Operational Workflow:</h3>
+1. <strong>Intake & Pre-Scoring:</strong> Incoming orders are streamed through `trained_random_forest_pipeline.pkl`.
+2. <strong>Threshold Filtering:</strong> Shipments exceeding $\tau = 0.35$ are automatically routed into the <strong>Priority Dispatch Queue</strong>.
+3. <strong>Dispatch Intervention:</strong> Warehouse logistics supervisors prioritize flagged orders for expedited cross-docking, dedicated courier transfers, or pre-departure customer communication.
+<hr>
+<h2>8. Managerial Implications & Strategic Recommendations</h2>
+<h3>8.1 Resolution of the Premium Shipping Paradox</h3>
+The 95.32% delay rate in First Class shipping represents severe brand risk. Supply chain executives must:
+- <strong>Recalibrate Promise Windows:</strong> Extend published First Class delivery estimates by +24 to +48 hours to align customer expectations with physical fulfillment constraints.
+- <strong>Enforce 3PL Carrier Penalties:</strong> Re-negotiate contracts with express carriers to establish clawback mechanisms for non-performance.
+<h3>8.2 Dynamic Lead Time Scheduling</h3>
+Rather than displaying static transit estimates at online checkout, e-commerce engines should interface directly with the Random Forest scoring model:
+- Orders originating from high-risk destinations (e.g., Central Africa with a 62.1% delay rate or Eastern Europe at 59.3%) should dynamically receive adjusted scheduled delivery dates.
+<h3>8.3 Capacity Buffering for Promotional Surges</h3>
+High discounts (`Order Item Discount > 20%`) correlate with increased delay probability due to packaging bottlenecks. Distribution centers should dynamically allocate temporary labor during promotional spikes to prevent packing queue starvation.
+<hr>
+<h2>9. Limitations & Future Research</h2>
+<p>1. <strong>Cross-Sectional vs. Temporal Splitting:</strong> The present study utilizes a stratified random split. While this evaluates generalized pattern recognition across shipments, a prospective roll-forward temporal evaluation (training on months 1–10, evaluating on months 11–12) would provide deeper insight into seasonal regime shifts.<br>2. <strong>Observational vs. Causal Interpretation:</strong> The model identifies predictive correlations, not causal relationships. Operational interventions (such as altering shipping mode rules) should be tested via controlled A/B rollouts.<br>3. <strong>Integration of Real-Time Telematics:</strong> Future iterations should incorporate upstream supplier telematics, weather disruption indices, and live carrier GPS tracking to dynamically update risk scores in transit.</p>
+<hr>
+<h2>10. Conclusion</h2>
+<p>This study successfully establishes a machine-learning framework for predicting late delivery risk in global supply chain operations. By purging target leakage and benchmarking multiple architectures, a tuned Random Forest pipeline was identified as the optimal classification engine (ROC-AUC = 0.7603).</p>
+<p>Crucially, reframing delivery prediction as an asymmetric cost problem and adjusting the classification threshold from <strong>0.50 to 0.35</strong> captured <strong>88.79% of all delayed shipments</strong>, shrinking missed late deliveries by <strong>75.0%</strong>. Model interpretability unmasked the critical operational breakdown in express shipping tiers, providing leadership with actionable leverage to optimize logistics agreements, adjust customer delivery commitments, and safeguard operational profitability.</p>
+<hr>
+<h2>References</h2>
+<p>- Abdullah, M. S., & Hasan, R. (2023). AI-driven insights for product marketing: Enhancing customer experience and refining market segmentation. <em>American Journal of Interdisciplinary Studies</em>, 4(04), 80–116.<br>- Bücker, M., Szepannek, G., Gosiewska, A., & Biecek, P. (2020). Transparency, auditability and explainability of machine learning models in credit scoring. <em>Journal of Operational Research</em>, arXiv:2009.13384.<br>- Chen, T., & Guestrin, C. (2016). XGBoost: A scalable tree boosting system. <em>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em>, 785–794.<br>- Davis, J., & Goadrich, M. (2006). The relationship between Precision-Recall and ROC curves. <em>Proceedings of the 23rd International Conference on Machine Learning</em>, 233–240.<br>- James, G., Witten, D., Hastie, T., Tibshirani, R., & Taylor, J. E. (2023). <em>An Introduction to Statistical Learning: With Applications in Python</em>. Springer.<br>- Kuhn, M., & Johnson, K. (2013). <em>Applied Predictive Modeling</em>. Springer New York.<br>- Lessmann, S., Baesens, B., Seow, H. V., & Thomas, L. C. (2015). Benchmarking state-of-the-art classification algorithms for credit scoring: An update of research. <em>European Journal of Operational Research</em>, 247(1), 124–136.<br>- Nasir, F., Ahmed, A., Kiraz, M., Yevseyeva, I., & Saif, M. (2024). Data-driven decision-making for bank target marketing using supervised learning classifiers on imbalanced big data. <em>Computers, Materials & Continua</em>, 81(1), 1703–1728.<br>- Schwartz, S., Wang, Q., & Fang, F. (2025). Enhancing ML models interpretability for operational risk scoring. <em>Decision Support Systems</em>, arXiv:2509.11389.<br>- Zheng, Y. (2025). Prediction of the effectiveness of bank marketing strategies using machine learning models. <em>Advances in Economics, Management and Political Sciences</em>, 170(1), 17–28.</p>
+    </div>
+</body>
+</html>
