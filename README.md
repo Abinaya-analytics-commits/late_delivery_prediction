@@ -5,88 +5,148 @@
 ---
 
 ## 📌 Executive Overview
-Late deliveries represent a critical vulnerability in global supply chain operations, directly triggering contractual SLA penalties, elevated customer service costs, and customer churn. In this project, an end-to-end Machine Learning Early Warning System was developed on **180,519 global shipments** from APL Logistics / DataCo. 
 
-By framing late delivery prevention as a **cost-sensitive classification problem**, a Random Forest classifier was trained on 14 non-leaking operational variables. Evaluating prediction cutoffs revealed that tuning the decision threshold to **0.35** captures **88.79% of all delayed shipments** (reducing missed late deliveries by **75%** compared to the standard 0.50 cutoff).
+Late deliveries represent a critical challenge in global supply chain operations, potentially affecting customer satisfaction, service-level agreement (SLA) compliance, and operational efficiency. This project develops a Machine Learning Early Warning System using **180,519 historical shipments** from the APL Logistics / DataCo Global Supply Chain dataset.
+
+A Random Forest classifier was trained using 14 operational variables selected after data leakage mitigation. Three classification algorithms were benchmarked, with Random Forest achieving the best overall discrimination performance.
+
+By optimising the classification threshold to **0.35**, the model achieved **88.79% recall**, identifying 17,577 delayed shipments in the test dataset. Compared with the standard 0.50 threshold, missed late deliveries decreased by approximately **74.9%**, although the lower threshold generated more false-positive alerts.
 
 ---
 
 ## 📊 Key Empirical Findings & Metrics
-- **Dataset Scale:** 180,519 shipments | Target: `Late_delivery_risk` | Baseline Late Rate: **54.83%**
-- **Leading Model:** Random Forest Pipeline (`n_estimators=150`, `max_depth=20`, `min_samples_leaf=5`, `class_weight='balanced'`)
-- **Model Discrimination:** **ROC-AUC = 0.7603** (Test set)
-- **Threshold Optimization (0.35 vs. 0.50):**
-  - **Recall:** Surged from **55.2% to 88.79%** (Caught **17,577 delayed shipments**)
-  - **Missed Delays:** Decreased from **8,864 down to 2,219**
-  - **F1-Score:** Improved from **0.6685 to 0.7176**
-- **The First-Class Shipping Paradox:** 
-  - **First Class orders exhibit a 95.32% delay rate** (avg predicted probability: 88.4%).
-  - **Second Class:** 76.63% delay rate.
-  - **Standard Class:** 38.07% delay rate.
-  - *Managerial Insight:* Customers paying the highest shipping premiums experience the poorest fulfillment reliability due to overly tight, unachievable promise windows.
+
+- **Dataset Scale:** 180,519 shipments
+- **Target Variable:** `Late_delivery_risk`
+- **Baseline Late-Delivery Rate:** 54.83%
+- **Selected Features:** 14 operational variables
+
+### Leading Model: Random Forest
+
+- `n_estimators=150`
+- `max_depth=20`
+- `min_samples_leaf=5`
+- `class_weight='balanced'`
+- `random_state=42`
+
+**Model Performance at the Standard 0.50 Threshold:**
+
+- Accuracy: **69.96%**
+- Precision: **84.55%**
+- Recall: **55.32%**
+- F1-Score: **0.6688**
+- ROC-AUC: **0.7595**
+
+### Threshold Optimisation: 0.35 vs. 0.50
+
+| Metric | Threshold 0.50 | Threshold 0.35 |
+|---|---:|---:|
+| Precision | 84.55% | 60.00% |
+| Recall | 55.32% | 88.79% |
+| F1-Score | 0.6688 | 0.7161 |
+| True Positives | 10,950 | 17,577 |
+| Missed Late Deliveries | 8,846 | 2,219 |
+| False Positives | 1,999 | 11,717 |
+
+**Key Finding:** The 0.35 threshold substantially improves the identification of delayed shipments, reducing missed late deliveries by approximately 74.9% compared with the default threshold.
+
+### The First-Class Shipping Performance Gap
+
+Exploratory analysis revealed substantial differences in observed late-delivery rates across shipping modes:
+
+- **First Class:** 95.32%
+- **Second Class:** 76.63%
+- **Same Day:** 45.74%
+- **Standard Class:** 38.07%
+
+**Managerial Insight:** First Class shipments recorded the highest observed late-delivery rate. This highlights an important area for further investigation into delivery commitments, carrier performance and transportation operations. The analysis identifies an association, not a proven cause of delays.
 
 ---
 
 ## 🗂️ Project Repository Structure
 
-```
+```text
 project_1/
 │
-├── README.md                                  # Comprehensive project documentation
-├── requirements.txt                           # Python dependencies
-├── app.py                                     # Interactive Streamlit operations dashboard
-├── trained_random_forest_pipeline.pkl         # Exported full scikit-learn pipeline (.pkl)
-├── execute_technical_pipeline.py              # Reproducible pipeline execution script
+├── README.md
+├── requirements.txt
+├── app.py
+├── trained_random_forest_pipeline.pkl
+├── execute_technical_pipeline.py
 │
-├── Research_Paper_Late_Delivery_Risk.md       # Full Academic Research Paper
-├── Executive_Summary_Late_Delivery_Risk.md    # 2-Page C-Suite Management Brief
-├── UM_Late_Delivery_Risk_Prediction.ipynb     # Complete Jupyter Notebook
+├── Research_Paper_Late_Delivery_Risk.md
+├── Executive_Summary_Late_Delivery_Risk.md
+├── UM_Late_Delivery_Risk_Prediction_Final.ipynb
 │
 ├── data/
-│   ├── APL_Logistics.csv                      # Raw supply chain dataset (180,519 rows)
-│   ├── UM_scored_test_orders_tuned.csv        # 36,104 test orders with probabilities & tiers
-│   └── late_delivery_alert_queue.csv          # Prioritized dispatch intervention queue
+│   ├── APL_Logistics.csv
+│   ├── UM_scored_test_orders_tuned.csv
+│   └── late_delivery_alert_queue.csv
 │
 ├── results/
-│   ├── UM_final_model_evaluation.csv          # Model comparison table (0.50 vs 0.35 threshold)
-│   ├── permutation_importance_results.csv     # Permutation feature importance (ROC-AUC drop)
-│   ├── RF_grouped_feature_importance.csv      # Grouped MDI importance by original feature
-│   └── RF_feature_importance_full.csv         # Full encoded feature importances
+│   ├── UM_final_model_evaluation.csv
+│   ├── permutation_importance_results.csv
+│   ├── RF_grouped_feature_importance.csv
+│   └── RF_feature_importance_full.csv
 │
 └── figures/
-    ├── feature_importance.png                 # Grouped feature importance bar chart
-    ├── permutation_importance.png             # Permutation importance bar chart
-    ├── shipping_mode_delay_risk.png           # Delay rate by shipping mode comparison
-    ├── confusion_matrix_threshold_035.png     # Test set confusion matrix at 0.35 threshold
-    └── risk_category_distribution.png         # Order counts across High, Medium, Low tiers
+    ├── feature_importance.png
+    ├── permutation_importance.png
+    ├── shipping_mode_delay_risk.png
+    ├── confusion_matrix_threshold_035.png
+    └── risk_category_distribution.png
 ```
 
 ---
 
 ## 🚀 How to Run the Interactive Dashboard
 
-1. **Activate your environment & install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 1. Install Dependencies
 
-2. **Launch Streamlit:**
-   ```bash
-   streamlit run app.py
-   ```
+Create and activate a Python environment, then install the required packages:
 
-3. **Dashboard Capabilities:**
-   - Calibrate the real-time threshold slider (default: `0.35`).
-   - Filter by Market, Region, and Shipping Mode.
-   - Inspect live KPIs (Total Orders, Recall %, Delayed Volume, High-Risk Orders).
-   - Review the **Priority Dispatch Alert Queue** and download flagged shipments as a CSV for operations teams.
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Launch Streamlit
+
+```bash
+streamlit run app.py
+```
+
+### 3. Dashboard Capabilities
+
+The interactive dashboard provides:
+
+- **Threshold Adjustment:** Change the classification threshold using an interactive slider, with 0.35 as the default.
+- **Data Filtering:** Filter shipment records by Market, Region and Shipping Mode.
+- **Dynamic KPI Cards:** Examine filtered order counts, flagged orders and late-delivery recall.
+- **Risk Visualisations:** Explore predicted risk categories, shipping-mode delivery patterns and regional delivery performance.
+- **Priority Alert Queue:** Review orders ranked by predicted late-delivery probability.
+- **CSV Export:** Download flagged shipment records for further operational analysis.
+
+**Implementation Note:** The dashboard loads pre-scored test data containing predictions generated by the trained Random Forest model. KPI values, filters and flagged-order lists update interactively based on the selected controls. The current application is an analytical decision-support prototype, not a live system that continuously processes incoming orders.
 
 ---
 
 ## 🎓 Deliverables Summary
-1. **Academic Research Paper:** `Research_Paper_Late_Delivery_Risk.md` / `.pdf`
-2. **Executive Summary:** `Executive_Summary_Late_Delivery_Risk.md` / `.pdf`
+
+1. **Academic Research Paper:** `Research_Paper_Late_Delivery_Risk.md`
+2. **Executive Summary:** `Executive_Summary_Late_Delivery_Risk.md`
 3. **Interactive Streamlit Dashboard:** `app.py`
 4. **Trained Random Forest Pipeline:** `trained_random_forest_pipeline.pkl`
-5. **Scored Test Datasets & Alert Queue:** `data/`
-6. **Model Metrics & Charts:** `results/` & `figures/`
+5. **Scored Test Dataset and Alert Queue:** `data/`
+6. **Model Evaluation Results and Visualisations:** `results/` and `figures/`
+7. **Final Jupyter Notebook:** `UM_Late_Delivery_Risk_Prediction_Final.ipynb`
+
+---
+
+## 🔍 Conclusion
+
+This project demonstrates how machine learning can support proactive late-delivery risk identification in global supply chain operations. Through model benchmarking, recall-oriented threshold optimisation and feature importance analysis, the study identifies important patterns in shipment delivery risk.
+
+The interactive Streamlit dashboard further demonstrates how model predictions can be presented through a practical decision-support interface, helping users explore potentially delayed shipments and prioritise further investigation.
+
+Future improvements could include temporal model validation, real-time operational data integration and deployment within live order-management systems.
+
